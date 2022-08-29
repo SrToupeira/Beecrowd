@@ -11,17 +11,17 @@ int main()
 	
 	if(B%A==0)
 	{
-		printf("Sao multiplos\n");
+		printf("Sao Multiplos\n");
 	}
 	else
 	{
 		if(B==0)
 		{
-			printf("Sao multiplos\n");
+			printf("Sao Multiplos\n");
 		}
 		else
 		{
-			printf("Nao sao multiplos\n");
+			printf("Nao sao Multiplos\n");
 		}
 	}
 

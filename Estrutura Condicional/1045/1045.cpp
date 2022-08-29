@@ -58,63 +58,38 @@ int main()
 		}
 	}
 	
-	if(lA == lB && lB == lC)
+	if(lA >= lB + lC)
 	{
-		printf("TRIANGULO ACUTANGULO\nTRIANGULO EQUILATERO\n");
+		printf("NAO FORMA TRIANGULO\n");
 	}
 	else
 	{
+		if(lA*lA == lB*lB + lC*lC)
+		{
+			printf("TRIANGULO RETANGULO\n");
+		}
+		if(lA*lA > lB*lB + lC*lC)
+		{
+			printf("TRIANGULO OBTUSANGULO\n");
+		}
+		if(lA*lA < lB*lB + lC*lC)
+		{
+			printf("TRIANGULO ACUTANGULO\n");
+		}
+		if(lA == lB && lB == lC)
+		{
+			printf("TRIANGULO EQUILATERO\n");
+		}
 		if(lA == lB && lB != lC)
 		{
-			printf("TRIANGULO ACUTANGULO\nTRIANGULO ISOSCELES\n");
+			printf("TRIANGULO ISOSCELES\n");
 		}
-		else
+		if(lA != lB && lB == lC)
 		{
-			if(lA != lB && lB == lC)
-			{
-				if(lA*lA > lB*lB + lC*lC)
-				{
-					printf("TRIANGULO OBTUSANGULO\nTRIANGULO ISOSCELES\n");
-				}
-				else
-				{
-					if(lA*lA < lB*lB + lC*lC)
-					{
-						printf("TRIANGULO ACUTANGULO\nTRIANGULO ISOSCELES\n");
-					}
-					else
-					{
-						printf("TRIANGULO RETANGULO\nTRIANGULO ISOSCELES\n");
-					}
-				}
-			}
-			else
-			{
-				if(lA >= lB +lC)
-				{
-					printf("NAO FORMA TRIANGULO\n");
-				}
-				else
-				{
-					if(lA*lA == lB*lB + lC*lC)
-					{
-						printf("TRIANGULO RETANGULO\n");
-					}
-					else
-					{
-						if(lA*lA > lB*lB + lC*lC)
-						{
-							printf("TRIANGULO OBTUSANGULO\n");
-						}
-						else
-						{
-							printf("TRIANGULO ACUTANGULO\n");
-						}
-					}
-				}
-			}
+			printf("TRIANGULO ISOSCELES\n");
 		}
+		
 	}
-	
+
 	return 0;
 }
