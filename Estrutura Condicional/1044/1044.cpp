@@ -9,21 +9,39 @@ int main()
 	
 	scanf("%d %d",&A,&B);
 	
-	if(B%A==0)
+	if((A == 0 && B != 0) || (A != 0 && B == 0))
 	{
 		printf("Sao Multiplos\n");
 	}
 	else
 	{
-		if(B==0)
+		if(A>B)
 		{
-			printf("Sao Multiplos\n");
+				if(A%B==0)
+				{
+					printf("Sao Multiplos\n");
+				}
+				else
+				{
+					printf("Nao sao Multiplos\n");
+				}
 		}
 		else
 		{
-			printf("Nao sao Multiplos\n");
+			if(A<B)
+			{
+				if(B%A==0)
+				{
+					printf("Sao Multiplos\n");
+				}
+				else
+				{
+					printf("Nao sao Multiplos\n");
+				}
+			}
+		
 		}
 	}
-
+	
 	return 0;
 }
