@@ -49,9 +49,72 @@ int main()
 					}
 					else
 					{
-						lA = C;
-						lB = A;
-						lC = B;
+						if(C > A && A > C)
+						{
+							lA = C;
+							lB = A;
+							lC = B;
+						}
+						else
+						{
+							if(A == B && B > C)
+							{
+								lA = A;
+								lB = B;
+								lC = C;
+							}
+							else
+							{
+								if(B == C && C > A)
+								{
+									lA = B;
+									lB = C;
+									lC = A;
+								}
+								else
+								{
+									if(A == C && C > B)
+									{
+										lA = A;
+										lB = C;
+										lC = B;
+									}
+									else
+									{
+										if(A == B && B < C)
+										{
+											lA = C;
+											lB = A;
+											lC = B;
+										}
+										else
+										{
+											if(B == C && C < A)
+											{
+												lA = A;
+												lB = C;
+												lC = B;
+											}
+											else
+											{
+												if(A == C && C < B)
+												{
+													lA = B;
+													lB = C;
+													lC = A;
+												}
+												else
+												{
+													lA = A;
+													lB = B;
+													lC = C;	
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			}
