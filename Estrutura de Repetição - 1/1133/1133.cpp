@@ -4,17 +4,31 @@ using namespace std;
 
 int main()
 {
-	int X, Y;
+	int X, Y, Maior, Menor;
 	
 	scanf("%d %d", &X, &Y);
 	
-	while(X < Y && Y - X != 1)
+	if(X > Y)
 	{
-		X++;
-		
-		if(X % 5 == 2 || X % 5 == 3)
+		Maior = X;
+		Menor = Y;
+	}
+	else
+	{
+		if(Y > X)
 		{
-			printf("%d\n",X);
+			Maior = Y;
+			Menor = X;
+		}
+	}
+	
+	while(Menor < Maior && Maior - Menor > 1)
+	{
+		Menor++;
+		
+		if(Menor % 5 == 2 || Menor % 5 == 3)
+		{
+			printf("%d\n", Menor);
 		}
 	}
 

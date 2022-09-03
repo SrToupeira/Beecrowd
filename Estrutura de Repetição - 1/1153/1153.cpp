@@ -4,20 +4,18 @@ using namespace std;
 
 int main()
 {
-	int N, S;
+	int number, factorial;
 	
-	scanf("%d", &N);
+	scanf("%d", &number);
+
+	factorial = number * (number - 1);
 	
-		S = N * (N-1);
-		
-	for(int i = 0; i < N; i++)
-	{
-		N--;
-		
-		S = S * (N-1);
+	for(int i = (number - 2); i > 1; i--)
+	{	
+		factorial = factorial * i;
 	}
 	
-	printf("%d\n",S);
+	printf("%d\n", factorial);
 
 	return 0;
 }

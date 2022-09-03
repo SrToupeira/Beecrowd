@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
@@ -14,7 +12,7 @@ int main()
 		
 		n++;
 		
-		if(n < 3)
+		if(n < X)
 		{
 			printf(" ");
 		}
