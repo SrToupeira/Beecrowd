@@ -4,43 +4,45 @@ using namespace std;
 
 int main()
 {
+	int datas_consideradas, pessoas, decisao;
+	string data, evento;
 	bool flag;
-	int dates_number, people;
-	string date, event;
-	char provision;
 	
-	scanf("%d %d", &dates_number, &people);
-	
-	flag = true;
-	
-	for(int i = 0; i < dates_number; i++)
-	{
-		cin >> date;
+	while(scanf("%d %d", &pessoas, &datas_consideradas) != EOF)
+	{	
+		evento = "vazio";
 		
-		for(int f = 0; f < people; f++)
-		{
-			
-			scanf("%c", &provision);
-			
-			if(provision == '0')
+			for(int f = 0; f < datas_consideradas; f++)
 			{
-				flag = false;
+				cin >> data;
+				
+				flag = true;
+				
+				for(int h = 0; h < pessoas; h++)
+				{
+					cin >> decisao;
+					
+					if(decisao == 0)
+					{
+						flag = false;
+					}			
+				}
+				
+				if(flag == true)
+				{
+					evento = data;
+				}
+
+			}
+			
+			if(evento != "vazio")
+			{
+				cout << evento << "\n";
 			}
 			else
 			{
-				flag = true;
-				event = date;
-			}
-		}
-	}
-
-	if(flag == true)
-	{
-		cout << event << "\n";
-	}
-	else
-	{
-		printf("Pizza antes de FdI\n");
+				printf("Pizza antes de FdI\n");
+			}		
 	}
 	
 	return 0;
