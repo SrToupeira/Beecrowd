@@ -28,7 +28,7 @@ int main()
 					}			
 				}
 				
-				if(flag == true)
+				if(flag == true && evento == "vazio")
 				{
 					evento = data;
 				}

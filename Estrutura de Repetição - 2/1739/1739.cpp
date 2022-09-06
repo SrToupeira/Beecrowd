@@ -4,43 +4,48 @@ int main()
 {
 	int N, first = 1, second = 1, third, threebonacci, aux;
 	
-	scanf("%d", &N);
-	
-	for(int i = 0; i < N; i++)
-	{
-		while(true)
+	while(scanf("%d", &N) != EOF)
+	{	
+		threebonacci = 0;
+		
+		for(int i = 0; i < N; i++)
 		{
-			third = first + second;
 			
-			first = second;
-			
-			second = third;
-	
-			if(third % 3 == 0)
+			while(threebonacci == 0)
 			{
-				threebonacci = third;
-				break;
-			}
-			
-			aux = third;
-			
-			while(aux > 0)
-			{
-				if(aux % 10 == 3 || aux / 10 == 3)
+				third = first + second;
+				
+				first = second;
+				
+				second = third;
+		
+				if(third % 3 == 0)
 				{
 					threebonacci = third;
 					break;
 				}
 				else
 				{
-					aux = aux / 10;
+					aux = third;
+					
+					while(aux > 3)
+					{
+						if(aux % 10 == 3 || aux / 10 == 3)
+						{	
+							threebonacci = third;
+							break;
+						}
+						else
+						{
+							aux = aux / 10;
+						}
+					}
 				}
 			}
-				
 		}
+		
+		printf("%d\n", threebonacci);
 	}
-	
-	printf("%d", threebonacci);
 	
 	return 0;
 }

@@ -3,27 +3,23 @@
 
 int main()
 {
-	int base, height, law, side;
-	float rate;
+	float base, height, law, rate;
 	
 	while(true)
 	{
-		scanf("%d", &base);
+		scanf("%f", &base);
 		
-		if(base != 0)
-		{
-			scanf("%d %d", &height, &law);
-			
-			rate = law / 100.0;
-			
-			side = sqrt((base * height) / rate);
-			
-			printf("%d\n", side);	
-		}
-		else
-		{
+		if(base == 0) 
 			break;
-		}
+		
+		scanf("%f %f", &height, &law);
+		
+		rate = law / 100.0;
+		
+		int side = (int)sqrt(((base * height) / rate));
+		
+		printf("%d\n", side);	
+	
 	}
 	
 	return 0;
