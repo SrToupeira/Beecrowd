@@ -2,9 +2,9 @@
 
 int main()
 {
-	int N, first = 1, second = 1, third, threebonacci, aux;
+	long long int N, first = 1, second = 1, third, threebonacci, aux;
 	
-	while(scanf("%d", &N) != EOF)
+	while(scanf("%lld", &N) != EOF)
 	{	
 		threebonacci = 0;
 		
@@ -44,7 +44,7 @@ int main()
 			}
 		}
 		
-		printf("%d\n", threebonacci);
+		printf("%lld\n", threebonacci);
 	}
 	
 	return 0;
