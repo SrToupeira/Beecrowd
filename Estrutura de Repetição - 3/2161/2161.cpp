@@ -2,22 +2,24 @@
 
 int main()
 {
-    int N;
-    float X, answer;
+    int number;
+    double X = 0, answer;
     
-    x = 1.6;
+	scanf("%d", &number);
+	
+	if(number != 0)
+	{
+		X = 1.0 / 6;
+	
+		for(int i = 1; i < number; i++)
+		{
+			X = 1 / (X + 6);
+		}
+	}
 
-    for(int i = 0; i < N; i++;)
-    {
-        x = x / 1.6;
+	answer = 3 + X;
 
-    }
+	printf("%.10lf\n", answer);
 
-    if(i == 0)
-    {
-        answer = 3;
-        printf("%.10f\n", answer);
-    }
-    else
-    {
-        answer = 
+	return 0;
+}
