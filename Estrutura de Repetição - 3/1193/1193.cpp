@@ -2,67 +2,34 @@
 
 int main()
 {
-	int N
-	char type[3]
+    int N, numero;
+    
+    scanf("%d", &N);
 
-	scanf("%d %3s", &number, type);
+    for(int i = 0; i < N; i++)
+    {
+        int binario = 0, produto = 1, resto;
 
-	switch(type)
-	{
-		case "dec":
-			
-			//conversao de numero decimal para binário
+        scanf("%d %s", &numero, &tipo);
 
-			quo = number;
-			
-			for(int i = 0; quo > 0; i++)
-			{
-				if(quo % 2 == 0)
-				{
-					bin[i] = 0;
-				}
-				else
-				{
-					bin[i] = 1;
-				}
+        if(tipo == "dec")
+        {
+            //conversor de decimal para binario;
 
-				quo = quo / 2;
-			}
+            int binario = 0, produto = 1, resto;
 
-			//conversao de numero decimal para hexadecimal
+            while(numero != 0)
+            {
+                resto = numero % 2;
+                binario = binario + (resto * produto);
+                numero = numero / 2;
+                produto *= 10;
+            }
 
-			for
-			{
-				switch(quo % 16)
-				{
-					case 10:
-						hex[i] = a;
-						break;
-
-					case 11:
-						hex[i] = b;
-						break;
-
-					case 12:
-						hex[i] = c;
-						break;
-
-					case 13:
-						hex[i] = d;
-						break;
-
-					case 14:
-						hex[i] = e;
-						break;
-
-					case 15:
-						hex[i] = f;
-						break;
-					
-					default:
-						hex[i] = quo % 16;
+            //conversor de binario para hexadecimal;
 
 
+    }
 
-
-					
+    return 0;
+}

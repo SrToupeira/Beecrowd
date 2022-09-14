@@ -1,24 +1,23 @@
-#include <stdio.h> 
+#include <stdio.h>
 
 int main()
 {
-	int T, N[1000];
-	
-	scanf("%d", &T);
+    int N[1000], T, f = 0;
 
-	N[0] = T;
+    scanf("%d", &T);
+    
+    for(int i = 0; i < 1000; i++)
+    {
+        N[i] = f;
 
-	for(int i = 0; i < 1000; i++)
-	{
-		if(N[i] > T - 1)
-		{
-			N[i] -= N[i];
-		}
+        if(f < T - 1)
+        {
+            f++;
+        }
+        else f = 0;
 
-		printf("N[%d] = %d\n", i, N[i]);
+        printf("N[%d] = %d\n", i, N[i]);
+    }
 
-		N[i + 1] = N[i] + 1;
-	}
-
-	return 0;
+    return 0;
 }
