@@ -2,24 +2,24 @@
 
 int main()
 {
-	int casos, T;
-	unsigned long int N[60];
-	
-	N[0] = 0; N[1] = 1;
+    long long int fibonacci[61];
+    int casos, posicao;
 
-	for(int i = 2; i < 60; i++)
-	{
-		N[i] = N[i-2] + N[i-1];
-	}
-	
-	scanf("%d", &casos);
+    fibonacci[0] = 0; fibonacci[1] = 1;
 
-	for(int i = 0; i < casos; i++)
-	{
-		scanf("%d", &T);
+    for(int i = 2; i < 61; i++)
+    {
+        fibonacci[i] = fibonacci[i-2] + fibonacci[i-1];
+    }
 
-		printf("Fib(%d) = %ld\n", T, N[T]);
-	}
+    scanf("%d", &casos);
 
-	return 0;
+    for(int i = 0; i < casos; i++)
+    {
+        scanf("%d", &posicao);
+
+        printf("Fib(%d) = %lld\n", posicao, fibonacci[posicao]);
+    }
+
+    return 0;
 }

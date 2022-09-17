@@ -5,24 +5,38 @@ using namespace std;
 int main()
 {
     string N1, N2;
-    int soma1 = 0, soma2 = 0, x = 0;
+    int soma1, soma2;
     
-    while(cin >> N1 >> N2 && N1 != "0" && N2 != "0")
+    while(cin >> N1 >> N2)
     {
-        for(int i = 0; i < sizeof(N1); i++)
-        {
-            int x = stoi(N1);
+        if(N1 == "0" && N2 == "0") break;
 
-            soma1 += x;
+        repeticao:
+
+        soma1 = 0;
+
+        for(int i = 0; i < N1.size();i++)
+        {
+            soma1 += N1[i] - '0';
+        }
+        if(soma1 > 9)
+        {
+            N1 = to_string(soma1);
+            goto repeticao;
         }
         
-        x = 0;
+        repeticao1:
+        
+        soma2 = 0;
 
-        for(int i = 0; i < sizeof(N2); i++)
+        for(int i = 0; i < N2.size();i++)
         {
-            x = stoi(N2);
-
-            soma2 += x;
+            soma2 += N2[i] - '0';
+        }
+        if(soma2 > 9)
+        {
+            N2 = to_string(soma2);
+            goto repeticao1;
         }
 
         if(soma1 > soma2)
@@ -44,4 +58,3 @@ int main()
 
     return 0;
 }
-
