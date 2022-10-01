@@ -1,101 +1,34 @@
-#include <iostream>
-#include <string.h>
-#include <iterator>
-
-using namespace std;
+#include <stdio.h>
 
 int main()
 {
-	string word[50];
-	int l = 0;
+    char letra, ultima;
+    int troca[123] = {};
 
-	while(cin >> word != EOF)
-	{
-		//A intenção desse if é colocar espaços antes de cada palavra com excessão da primeira
-		//que sera a única em que o valor de l sera igual a zero;
+    troca[98] = 98; troca[106] = 106; troca[112] = 112; troca[115] = 115; troca[120] = 120; troca[122] = 122; troca[118] = 118;
+    troca[66] = 66; troca[74] = 74; troca[80] = 80; troca[83] = 83; troca[86] = 86; troca[88] = 88; troca[90] = 90;
 
-		if(l != 0)
-		{
-			printf(" ");
-		}
+    while(scanf("%c", &letra) != EOF)
+    {
+        if(letra == troca[letra])
+        {
+            if(letra > 91)
+            {
+                letra = 102; 
+            }
+            else
+            {
+                letra = 70;
+            }
+        }
 
-		//O loop será executado de acordo com o tamanho da palavra armazenada em um vetor, verificando
-		//letra por letra se alguma entra na condição de alteração;
-		
-		lenght = (int)strlen(word);
+        if(!((ultima == 70 || ultima == 102) && (letra == 102 || letra == 70)))
+        {
+            printf("%c", letra);
+        }
 
-		for(int i = 0; i < lenght; i++)
-		{
-			switch(word[i])
-			{
-				case 'S':
-					word[i] = 'F';
-					break;
-				case 's':
-					word[i] = 'f';
-					break;
-				case 'J':
-					word[i] = 'F';
-					break;
-				case 'j':
-					word[i] = 'f';
-					break;
-				case 'B':
-					word[i] = 'F';
-					break;
-				case 'b':
-					word[i] = 'f';
-					break;
-				case 'Z':
-					word[i] = 'F';
-					break;
-				case 'z':
-					word[i] = 'f';
-					break;
-				case 'P':
-					word[i] = 'F';
-					break;
-				case 'p':
-					word[i] = 'f';
-					break;
-				case 'V':
-					word[i] = 'F';
-					break;
-				case 'v':
-					word[i] = 'f';
-					break;
-				case 'X':
-					word[i] = 'F';
-					break;
-				case 'x':
-					word[i] = 'f';
-					break;
-			}
-			
-			//Caso uma letra seja alterada por 'f' quando ja havia um 'f' anteriormente o vetor todo
-			//sera reajustado uma posição para trás eliminando a repetição de f's
+        ultima = letra;
+    }
 
-			if(word[i] == 'f' && word[i-1] == 'f')
-			{
-				int k = i;
-
-				for(int j = 0; j < (lenght - i); j++)
-				{
-					word[k] = word [k+1];
-					k++;
-				}
-			}
-			
-			//cada letra é impressa individualmente após a verificação;
-
-			cout << word[i];
-		}
-		
-		//Variavel que controla os espaços antes de cada palavra, como seu valor e alterado a partir
-		//do primeiro loop apenas a primeira palavra nao terá um espaço antes;
-
-		l = 1;
-	}
-
-	return 0;
+    return 0;
 }
